@@ -9,7 +9,7 @@
 .history
 .svn/
 
-# IntelliJ related
+# IntelliJ relateds
 *.iml
 *.ipr
 *.iws
@@ -30,10 +30,8 @@
 .pub-cache/
 .pub/
 /build/
-/android
 /ios
-ios
-android
+ioss
 
 
 
