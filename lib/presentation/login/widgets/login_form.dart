@@ -18,13 +18,37 @@ class LoginForm extends StatelessWidget {
                 _title(context),
                 SizedBox(height: 30),
                 _emailText(),
-                TextField(),
+                _emailInput(context),
                 SizedBox(height: 30),
                 _passwordText(),
-                TextField(),
+                _passwordInput(context),
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  TextField _passwordInput(BuildContext context) {
+    return TextField(
+      decoration: InputDecoration(
+        hintText: 'Your password',
+        prefixIcon: Icon(
+          Icons.lock_outline,
+          color: Theme.of(context).iconTheme.color,
+        ),
+      ),
+    );
+  }
+
+  TextField _emailInput(BuildContext context) {
+    return TextField(
+      decoration: InputDecoration(
+        hintText: 'example@email.com',
+        prefixIcon: Icon(
+          Icons.person_outline,
+          color: Theme.of(context).iconTheme.color,
         ),
       ),
     );
