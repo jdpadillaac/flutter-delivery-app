@@ -30,17 +30,37 @@ final OutlineInputBorder _border = OutlineInputBorder(
 // Dark theme
 
 final darkTheme = ThemeData(
+  appBarTheme: AppBarTheme(
+    color: AppColors.blueDarkMedium,
+  ),
+  accentColor: AppColors.blueDark,
+  canvasColor: AppColors.blueDarkMedium,
+  scaffoldBackgroundColor: AppColors.blueDark,
   textTheme: GoogleFonts.poppinsTextTheme().apply(
-    bodyColor: AppColors.blueDark,
+    bodyColor: AppColors.white,
     displayColor: AppColors.white,
   ),
   inputDecorationTheme: InputDecorationTheme(
-    border: _border,
-    enabledBorder: _border,
-    focusedBorder: _border,
+    border: _darkThemeBorder(),
+    enabledBorder: _darkThemeBorder(),
+    focusedBorder: _darkThemeBorder(),
+    fillColor: AppColors.blueDarkMedium,
+    filled: true,
     hintStyle: GoogleFonts.poppins(
       color: AppColors.lightgrey,
     ),
   ),
-  iconTheme: IconThemeData(color: AppColors.blueDark, size: 2),
+  iconTheme: IconThemeData(color: AppColors.white, size: 2),
 );
+
+OutlineInputBorder _darkThemeBorder() {
+  return OutlineInputBorder(
+    borderRadius: BorderRadius.circular(10),
+    borderSide: BorderSide(
+      // color: AppColors.verylightgrey,
+      color: AppColors.verylightgrey,
+      width: 3,
+      style: BorderStyle.solid,
+    ),
+  );
+}

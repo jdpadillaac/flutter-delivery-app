@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_delivery_app/constants.dart';
+import 'package:flutter_delivery_app/presentation/home/home_page.dart';
 
 class BottomButton extends StatelessWidget {
   @override
@@ -17,10 +18,15 @@ class BottomButton extends StatelessWidget {
         ),
         child: Padding(
           padding: EdgeInsets.all(10),
-          child: Text(
-            'Ingresar',
-            textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.white, fontSize: 20),
+          child: InkWell(
+            child: Text(
+              'Ingresar',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+            onTap: () {
+              Navigator.pushReplacementNamed(context, HomePage.routeName);
+            },
           ),
         ),
       ),
