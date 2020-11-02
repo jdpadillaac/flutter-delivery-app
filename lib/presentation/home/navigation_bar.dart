@@ -17,8 +17,12 @@ class NavigationBar extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: DecoratedBox(
           decoration: BoxDecoration(
-            color: AppColors.blueDarkMedium,
+            color: Theme.of(context).canvasColor,
             borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              color: AppColors.blueDarkMedium,
+              width: 1,
+            ),
           ),
           child: Padding(
             padding: EdgeInsets.all(5),
@@ -27,12 +31,14 @@ class NavigationBar extends StatelessWidget {
               children: [
                 Material(
                   child: IconButton(
+                    color: homeIndex == 0 ? Colors.greenAccent : null,
                     icon: Icon(Icons.home_outlined),
                     onPressed: () => onIndexSelected(0),
                   ),
                 ),
                 Material(
                   child: IconButton(
+                    color: homeIndex == 1 ? Colors.greenAccent : null,
                     icon: Icon(Icons.store_outlined),
                     onPressed: () => onIndexSelected(1),
                   ),
@@ -41,6 +47,7 @@ class NavigationBar extends StatelessWidget {
                   child: CircleAvatar(
                     backgroundColor: AppColors.blueDarkLight,
                     child: IconButton(
+                      color: homeIndex == 2 ? Colors.white : null,
                       icon: Icon(Icons.shopping_basket_outlined),
                       onPressed: () => onIndexSelected(2),
                     ),
@@ -48,6 +55,7 @@ class NavigationBar extends StatelessWidget {
                 ),
                 Material(
                   child: IconButton(
+                    color: homeIndex == 3 ? Colors.greenAccent : null,
                     icon: Icon(Icons.favorite_border),
                     onPressed: () => onIndexSelected(3),
                   ),

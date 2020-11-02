@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_delivery_app/presentation/cart/cart_page.dart';
 import 'package:flutter_delivery_app/presentation/home/navigation_bar.dart';
+import 'package:flutter_delivery_app/presentation/home/products/products_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
@@ -15,18 +17,20 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Inicio'),
-        centerTitle: true,
-      ),
       body: Column(
         children: [
           Expanded(
             child: IndexedStack(
               index: index,
               children: [
-                Text('current index $index'),
-                Text('current inde  $index'),
+                ProductsPage(),
+                CartPage(
+                  onShoping: () {
+                    setState(() {
+                      index = 0;
+                    });
+                  },
+                ),
                 Text('current index $index'),
                 Text('current index $index'),
                 Text('current index $index'),
